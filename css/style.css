@@ -5,10 +5,14 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+html{
+    
+}
 body{
     background: #000;
     -webkit-font-smoothing: antialiased;
     color: #999;
+    
     
 }
 header{
@@ -47,28 +51,85 @@ header .logo img{
     width: 250px;
     height: 40px;
     
-}
-.movies{
+}.movies{
+    padding: 20px 0;
     width: 100%;
+    height: auto;
     display: flex;
-    height: 55vh;
+    overflow: hidden;
     box-sizing: border-box;
 }
 .movie-col{
     box-sizing: border-box;
+    font-size: 70%;
     background: #000;
-    width: 98%;
-    margin: 20px;
-    height: 70%;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 40px 20px;
+    transition: 1s;
+    height: 100%;
     overflow: hidden;
 }
-.movie-col:hover{
+.movie-col .detials{
+    width: 100%;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: rgba(153, 153, 153, 0.211);
+    color: #fff;
+    transform: translateY(100%);
+    text-align: center;
     transition: 1s;
-    transform: translateY(-5%);
-    top: 50%;
+    height:100%;
+    overflow: hidden;
+}
+.movie-col .detials img{
+    padding: 20px 0px;
+    z-index: 1;
+   width: 50%;
+   height: auto;
+   margin-bottom: 20%;
+}
+.movie-col .detials .hero{
+    padding: 10px;
+    z-index: 1;
+}
+.movie-col .detials p{
+    z-index: 2;
+    padding: 10px 4px;
+}
+.details h1{
+    color: red;
+}
+.movie-col:hover img:first-child{
+    transition: 1s;
+    transform: scale(1.1);
+    filter: blur(20px);
+}
+.movie-col:hover .detials{
+    transition: 1s;
+    height: 100%;
+    transform: translateY(0);
 }
 .movie-col img{
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: -2%;
+    padding-bottom: 0px;
+    width:80%;
+    transition:1s;
+    image-resolution: 100%;
+    height: 100%;
+}
+
+.movie-col img{
+    z-index: 1;
     width: 100%;
+    height: 100%;
+    position: center;
     overflow: hidden;
 }
 .search input{
@@ -108,29 +169,82 @@ header .logo img{
     width: 100%;
     height: auto;
     display: block;
+    overflow: hidden;
     box-sizing: border-box;
 }
 .movie-col{
     box-sizing: border-box;
+    font-size: 90%;
     background: #000;
-    width: 93%;
-    margin: 70px 10px;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 40px 20px;
     transition: 1s;
-    height: auto;
+    height: 100%;
     overflow: hidden;
+}
+.movie-col .detials{
+    width: 90%;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: rgba(153, 153, 153, 0.211);
+    color: #fff;
+    transform: translateY(100%);
+    text-align: center;
+    transition: 1s;
+    height:100%;
+    overflow: hidden;
+}
+.movie-col .detials img{
+    padding: 20px 0px;
+    z-index: 1;
+   width: 50%;
+   height: auto;
+   margin-bottom: 20%;
+}
+.movie-col .detials .hero{
+    padding: 10px;
+    z-index: 1;
+}
+.movie-col .detials p{
+    z-index: 2;
+    padding: 10px 4px;
+}
+.details h1{
+    color: red;
+}
+.movie-col:hover img:first-child{
+    transition: 1s;
+    transform: scale(1.1);
+    filter: blur(20px);
+}
+.movie-col:hover .detials{
+    transition: 1s;
+    height: 100%;
+    transform: translateY(0);
 }
 .movie-col img{
-    width: 110%;
-    image-resolution: 100%;
-    height: 110%;
+    z-index: 1;
     overflow: hidden;
+    margin-bottom: -2%;
+    padding-bottom: 0px;
+    width:80%;
+    transition:1s;
+    image-resolution: 100%;
+    height: 100%;
 }
+
     header{
         padding:10px 30px;
         flex-direction: column;
     }
     .heading h1{
         font-size: 2em;
+        overflow: hidden;
     }
 
     .navigation{
@@ -146,9 +260,12 @@ header .logo img{
         
     }
 }
+
+
 .showcase {
     width: 100%;
     height: 100vh;
+    z-index: 3;
     position: relative;
     background: url('../resources/background.jpg');
     background-size: cover;
@@ -162,6 +279,7 @@ header .logo img{
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     z-index: 1;
     background:rgba(0, 0, 0, 0.6);
     box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
